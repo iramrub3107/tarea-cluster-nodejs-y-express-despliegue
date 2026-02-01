@@ -186,3 +186,9 @@ Ahora, vamos a ejecutar varios comandos y veremos qué es lo que nos sale por la
 Finalmente, en el caso de que tengamos muchos procesos ejecutándose con PM2 y los queramos parar todos, podemos ejecutar ```pm2 stop all```
 
 <img width="1204" height="204" alt="image" src="https://github.com/user-attachments/assets/9b67ef18-a527-4c08-b440-1f387a2f3576" />
+
+---
+
+# CUESTIÓN FINAL (solo respuesta)
+
+Hay casos concretos en los que la aplicación sin clusterizar tiene mejores resultados porque el clúster tiene *overhead*, o sea, que usa recursos adicionales para que este vaya mejor sin afectar directamente a la tarea que se ejecute. Esto ayuda sobre todo para aquellas aplicaciones que sí requieren muchísimas cargas. Por lo que, para aquellos casos en los que se usen cargas pequeñas o pocas peticiones, lo más rentable es que la aplicación se encargue nada más que de un proceso simultáneamente, y no varios a la vez (lo que sucede al usar clústeres). 
