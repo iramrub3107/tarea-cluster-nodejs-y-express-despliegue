@@ -40,6 +40,22 @@ Luego vamos a instalarnos express ejecutando ```npm install express```, ya que n
 
 <img width="1200" height="678" alt="image" src="https://github.com/user-attachments/assets/32b99232-d299-46e4-b87c-50d5005ed54d" />
 
-A continuación, vamos a crear nuestro archivo app.js ejecutando ```nano app.js```, y en este pondremos el código que aparece en el PDF (en mi caso he hecho unos ligeros cambios para que, al ejecutar node app.js, el comando se ejecute sin problemas, como por ejemplo cambiar las líneas ```js res.send(`Final count is ${count}`);``` y ```js console.log(`App listening on port ${port}`);``` por ```js res.send("Final count is " + count);``` y ```js console.log("App listening on port" + port);```)
+A continuación, vamos a crear nuestro archivo app.js ejecutando ```nano app.js```, y en este pondremos el código que aparece en el PDF. En mi caso he hecho unos ligeros cambios para que, al ejecutar node app.js, el comando se ejecute sin problemas, como por ejemplo cambiar las siguientes líneas:
+
+```js
+res.send(`Final count is ${count}`);
+```
+y
+```js 
+console.log(`App listening on port ${port}`);
+```
+por estas:
+```js
+res.send("Final count is " + count);
+```
+y
+```js 
+console.log("App listening on port" + port);
+```
 
 <img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/04ff08a5-9c6b-4925-9944-a1bd8f25d756" />
