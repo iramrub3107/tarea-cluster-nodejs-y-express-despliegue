@@ -116,3 +116,20 @@ A continuación, iniciamos nuestra aplicación ejecutando ```node app.js```, y d
 
 Como podemos observar, la prueba no se ha demorado mucho en hacer: ha tardado apenas un segundo y medio y ha tenido una latencia de 135.1ms con 690 RPS efectivos.
 Ahora haremos una prueba similar pero con n = 500000000 (y sin clústeres, por lo que tendremos que editar nuestro archivo app.js para que no los tenga).
+
+<img width="1201" height="676" alt="image" src="https://github.com/user-attachments/assets/4f56e950-e324-4b31-81a0-1182d0d02996" />
+
+Como podemos observar, el tiempo total y la latencia han incrementado considerablemente, y apenas ha habido 1 RPS efectivo.
+A continuación, haremos estas mismas dos pruebas pero con nuestra app con clústeres. Para ello, simplemente creamos un archivo llamado app-clusters (por ejemplo), y pondremos el código con clústeres que teníamos previamente.
+Ahora, ejecutaremos la aplicación con clústeres
+
+<img width="1201" height="676" alt="image" src="https://github.com/user-attachments/assets/d13deb41-fe4a-4818-86e2-de86f8d51f79" />
+
+Y vamos a ir haciendo las pruebas que hicimos antes:
+
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/9a6c7f19-0e5b-4b06-9727-e839e42e7640" />
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/077f97e0-6949-4fdc-b5c0-c99d27247c01" />
+
+Como podemos observar, en comparación a la aplicación sin clústeres, la que los tiene reduce significativamente la duración total y la latencia.
+
+---
