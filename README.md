@@ -133,3 +133,37 @@ Y vamos a ir haciendo las pruebas que hicimos antes:
 Como podemos observar, en comparación a la aplicación sin clústeres, la que los tiene reduce significativamente la duración total y la latencia.
 
 ---
+
+# USO DE PM2 PARA ADMINISTRAR UN CLÚSTER DE Node.js
+
+Para poder usar esta herramienta, primero nos la tendremos que instalar. Para ello, ejecutaremos en la terminal ```sudo npm install pm2 -g```
+
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/42e9884e-a729-4847-bb11-a8d6d2c67010" />
+
+Y, a continuación, usaremos esta herramienta con nuestra aplicación sin clusterizar (app.js). Para ello, ejecutaremos pm2 start app.js -i 0
+
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/7c77573e-d9bf-4d24-8896-f10247351e45" />
+
+Y ahora tendríamos nuestra aplicación sin clústeres ejecutándose como si los tuviera.
+Ahora, vamos a realizar las mismas pruebas que hicimos en el apartado de “Métricas de rendimiento”, y vamos a comparar los resultados que nos de ahora con los que nos dio previamente al ejecutar la misma aplicación con o sin clústeres:
+
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/13b7220e-8b88-44d1-b8c4-315d4eabecaa" />
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/c07ffecf-cc7a-4b9c-a6bc-5e171b75321d" />
+
+Como podemos observar, hay una diferencia algo considerable ejecutando la aplicación sin clústeres pero “metiéndolos” con PM2, ante ejecutar la misma aplicación con clústeres. El tiempo de ejecución y la latencia llega a ser hasta 3 veces menor ejecutando la aplicación con PM2 que la aplicación con clústeres.
+
+Si ejecutamos ahora pm2 stop app.js, veremos cómo la aplicación se desconecta
+
+<img width="1203" height="135" alt="image" src="https://github.com/user-attachments/assets/b9730f07-23dd-41f9-88da-341da5de7803" />
+
+Ahora, vamos a crear un archivo Ecosystem para que nos ahorremos la parte de “-i 0” cada vez que vayamos a iniciar nuestra aplicación con PM2. Para ello, ejecutaremos simplemente pm2 ecosystem
+
+<img width="1202" height="154" alt="image" src="https://github.com/user-attachments/assets/ca0a9134-e779-4281-a6be-8d8831f328e6" />
+
+Y con este comando ya nos habrá creado el archivo, por lo que ahora tocará configurarlo para nuestra aplicación. Para ello, ejecutaremos sudo nano ecosystem.config.js y pondremos el código que aparece a continuación:
+
+<img width="1202" height="676" alt="image" src="https://github.com/user-attachments/assets/889e7b8a-d1aa-4b6d-8165-cc47fe55ca04" />
+
+Y ahora, ejecutaremos pm2 start ecosystem.config.js y ya se nos ejecutaría nuestra aplicación sin necesidad de indicarle a PM2 que inicie la aplicación en "cluster_mode" (con la opción -i) y sin indicarle que genere x cantidad de workers.
+
+<img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/342aebcf-7af0-4d99-9e0d-e90f428568a1" />
