@@ -29,3 +29,17 @@ Como vamos a tener que acceder mediante SSH a muestra máquina, seguiremos estos
 3. Desde la terminal de nuestro equipo anfitrión, accederemos a la máquina ejecutando (al menos en mi caso, al usar Arch Linux) ssh usuario@172.20.10.4 (la IP de mi VM)
 
 <img width="1202" height="677" alt="image" src="https://github.com/user-attachments/assets/675a0cbf-ee03-4f9b-91c9-8095bdc15d0f" />
+
+--- 
+
+Ahora, vamos a empezar a instalar todo lo necesario para poder empezar esta parte. Para ello, crearemos la carpeta cluster-node con ```mkdir cluster-node```, accedemos a ella (```cd cluster-node/```) y, una vez dentro de la nueva carpeta, ejecutaremos ```npm init```
+
+<img width="1202" height="678" alt="image" src="https://github.com/user-attachments/assets/c1cc0c6f-4fb0-46e8-a382-a61b393b12e7" />
+
+Luego vamos a instalarnos express ejecutando ```npm install express```, ya que nuestro programa lo va a necesitar.
+
+<img width="1200" height="678" alt="image" src="https://github.com/user-attachments/assets/32b99232-d299-46e4-b87c-50d5005ed54d" />
+
+A continuación, vamos a crear nuestro archivo app.js ejecutando ```nano app.js```, y en este pondremos el código que aparece en el PDF (en mi caso he hecho unos ligeros cambios para que, al ejecutar node app.js, el comando se ejecute sin problemas, como por ejemplo cambiar las líneas ```js res.send(`Final count is ${count}`);``` y ```js console.log(`App listening on port ${port}`);``` por ```js res.send("Final count is " + count);``` y ```js console.log("App listening on port" + port);```)
+
+<img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/04ff08a5-9c6b-4925-9944-a1bd8f25d756" />
