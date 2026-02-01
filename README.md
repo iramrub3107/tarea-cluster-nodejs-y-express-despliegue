@@ -14,7 +14,7 @@ Para instalarnos NodeJS LTS, tenemos que ejecutar dos comandos:
 
 Una vez tengamos instalado NodeJS, ya sí podremos empezar a hacer esta práctica.
 
-# USANDO LOS CLUSTERS: 1. Primero sin Cluster
+# USANDO LOS CLUSTERS: 1. Primero sin cluster
 
 Como vamos a tener que acceder mediante SSH a muestra máquina, seguiremos estos pasos:
 
@@ -83,3 +83,7 @@ A continuación, vamos a realizar otra comprobación pero esta vez con un valor 
 <img width="1201" height="717" alt="image" src="https://github.com/user-attachments/assets/6c9c7023-6909-4860-be05-2f0a3266d72a" />
 
 Como se puede ver, ambas páginas han tardado bastante en cargar. Esto ocurre porque el único subproceso que está ocupado con el primer proceso, al pasarle un segundo proceso, tiene que procesar primero el primer proceso antes de ponerse con el segundo.
+
+---
+
+# USANDO LOS CLUSTERS: 2. ¡Ahora con más cluster!
