@@ -140,7 +140,7 @@ Para poder usar esta herramienta, primero nos la tendremos que instalar. Para el
 
 <img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/42e9884e-a729-4847-bb11-a8d6d2c67010" />
 
-Y, a continuación, usaremos esta herramienta con nuestra aplicación sin clusterizar (app.js). Para ello, ejecutaremos pm2 start app.js -i 0
+Y, a continuación, usaremos esta herramienta con nuestra aplicación sin clusterizar (app.js). Para ello, ejecutaremos ```pm2 start app.js -i 0```
 
 <img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/7c77573e-d9bf-4d24-8896-f10247351e45" />
 
@@ -152,38 +152,37 @@ Ahora, vamos a realizar las mismas pruebas que hicimos en el apartado de “Mét
 
 Como podemos observar, hay una diferencia algo considerable ejecutando la aplicación sin clústeres pero “metiéndolos” con PM2, ante ejecutar la misma aplicación con clústeres. El tiempo de ejecución y la latencia llega a ser hasta 3 veces menor ejecutando la aplicación con PM2 que la aplicación con clústeres.
 
-Si ejecutamos ahora pm2 stop app.js, veremos cómo la aplicación se desconecta
+Si ejecutamos ahora ```pm2 stop app.js```, veremos cómo la aplicación se desconecta
 
 <img width="1203" height="135" alt="image" src="https://github.com/user-attachments/assets/b9730f07-23dd-41f9-88da-341da5de7803" />
 
-Ahora, vamos a crear un archivo Ecosystem para que nos ahorremos la parte de “-i 0” cada vez que vayamos a iniciar nuestra aplicación con PM2. Para ello, ejecutaremos simplemente pm2 ecosystem
+Ahora, vamos a crear un archivo Ecosystem para que nos ahorremos la parte de “-i 0” cada vez que vayamos a iniciar nuestra aplicación con PM2. Para ello, ejecutaremos simplemente ```pm2 ecosystem```
 
 <img width="1202" height="154" alt="image" src="https://github.com/user-attachments/assets/ca0a9134-e779-4281-a6be-8d8831f328e6" />
 
-Y con este comando ya nos habrá creado el archivo, por lo que ahora tocará configurarlo para nuestra aplicación. Para ello, ejecutaremos sudo nano ecosystem.config.js y pondremos el código que aparece a continuación:
+Y con este comando ya nos habrá creado el archivo, por lo que ahora tocará configurarlo para nuestra aplicación. Para ello, ejecutaremos ```sudo nano ecosystem.config.js``` y pondremos el código que aparece a continuación:
 
 <img width="1202" height="676" alt="image" src="https://github.com/user-attachments/assets/889e7b8a-d1aa-4b6d-8165-cc47fe55ca04" />
 
-Y ahora, ejecutaremos pm2 start ecosystem.config.js y ya se nos ejecutaría nuestra aplicación sin necesidad de indicarle a PM2 que inicie la aplicación en "cluster_mode" (con la opción -i) y sin indicarle que genere x cantidad de workers.
+Y ahora, ejecutaremos ```pm2 start ecosystem.config.js``` y ya se nos ejecutaría nuestra aplicación sin necesidad de indicarle a PM2 que inicie la aplicación en "cluster_mode" (con la opción -i) y sin indicarle que genere x cantidad de workers.
 
 <img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/342aebcf-7af0-4d99-9e0d-e90f428568a1" />
 
 ---
 
 Ahora, vamos a ejecutar varios comandos y veremos qué es lo que nos sale por la terminal:
-1. pm2 ls: Al ejecutar este comando, nos sale básicamente la misma tabla que nos aparece cuando vamos a iniciar nuestra aplicación. O sea, que lo que nos sale es la lista de procesos gestionados por esta herramienta, su consumo, modo de ejecución, su estado…
+1. ```pm2 ls```: Al ejecutar este comando, nos sale básicamente la misma tabla que nos aparece cuando vamos a iniciar nuestra aplicación. O sea, que lo que nos sale es la lista de procesos gestionados por esta herramienta, su consumo, modo de ejecución, su estado…
 
 <img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/e0a13d4b-87df-45ce-93ef-3b77d02915dd" />
 
-
-2. pm2 logs: Al ejecutar este comando, nos sale en tiempo real los logs de todos los procesos gestionados por PM2.
+2. ```pm2 logs```: Al ejecutar este comando, nos sale en tiempo real los logs de todos los procesos gestionados por PM2.
 
 <img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/f3c5f911-03a5-405b-ab68-cdb37ce6a73e" />
 
-3. pm2 monit: Al ejecutar este comando, podemos monitorizar el uso de la CPU, memoria y estado de los procesos gestionados por PM2 mediante una interfaz.
+3. ```pm2 monit```: Al ejecutar este comando, podemos monitorizar el uso de la CPU, memoria y estado de los procesos gestionados por PM2 mediante una interfaz.
 
 <img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/35583acc-189c-4c33-8dc6-402d3f0cf960" />
 
-Finalmente, en el caso de que tengamos muchos procesos ejecutándose con PM2 y los queramos parar todos, podemos ejecutar pm2 stop all
+Finalmente, en el caso de que tengamos muchos procesos ejecutándose con PM2 y los queramos parar todos, podemos ejecutar ```pm2 stop all```
 
 <img width="1204" height="204" alt="image" src="https://github.com/user-attachments/assets/9b67ef18-a527-4c08-b440-1f387a2f3576" />
