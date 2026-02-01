@@ -100,3 +100,19 @@ A continuación, haremos una única solicitud al servidor con un valor de n gran
 <img width="900" height="667" alt="image" src="https://github.com/user-attachments/assets/1b83b8c3-4a6a-4bfc-bddd-aded6af845b1" />
 
 Como podemos observar, aunque la solicitud grande siga tardando un poco más, la otra (la que tiene un valor n = 555), se ha hecho casi inmediatamente tras aplicar más workers para las solicitudes.
+
+---
+
+# MÉTRICAS DE RENDIMIENTO
+
+Para usar estas métricas de rendimiento, vamos a usar el paquete **loadtest**. Para ello, nos lo instalaremos ejecutando ```npm install -g loadtest```:
+
+<img width="1203" height="677" alt="image" src="https://github.com/user-attachments/assets/531c740a-ad5e-42b6-a2af-982e007060ce" />
+
+A continuación, iniciamos nuestra aplicación ejecutando ```node app.js```, y después, en otra terminal, hacemos una prueba de carga con el paquete que nos acabamos de instalar (con loadtest):
+
+<img width="1200" height="677" alt="image" src="https://github.com/user-attachments/assets/ddbdf9a2-d5c9-4102-93e9-34f8e8a4d5f9" />
+<img width="1201" height="676" alt="image" src="https://github.com/user-attachments/assets/bdaa0261-ce22-4690-8864-485002222274" />
+
+Como podemos observar, la prueba no se ha demorado mucho en hacer: ha tardado apenas un segundo y medio y ha tenido una latencia de 135.1ms con 690 RPS efectivos.
+Ahora haremos una prueba similar pero con n = 500000000 (y sin clústeres, por lo que tendremos que editar nuestro archivo app.js para que no los tenga).
