@@ -40,7 +40,7 @@ Luego vamos a instalarnos express ejecutando ```npm install express```, ya que n
 
 <img width="1200" height="678" alt="image" src="https://github.com/user-attachments/assets/32b99232-d299-46e4-b87c-50d5005ed54d" />
 
-A continuación, vamos a crear nuestro archivo app.js ejecutando ```nano app.js```, y en este pondremos el código que aparece en el PDF. En mi caso he hecho unos ligeros cambios para que, al ejecutar node app.js, el comando se ejecute sin problemas, como por ejemplo cambiar las siguientes líneas:
+A continuación, vamos a crear nuestro archivo app.js (puede llamarse de cualquier forma este archivo mientras sea un .js, yo lo he llamado "app" por ponerle un nombre sencillo) ejecutando ```nano app.js```, y en este pondremos el código que aparece en el PDF. En mi caso he hecho unos ligeros cambios para que, al ejecutar node app.js, el comando se ejecute sin problemas, como por ejemplo cambiar las siguientes líneas:
 
 ```js
 res.send(`Final count is ${count}`);
@@ -59,3 +59,7 @@ console.log("App listening on port" + port);
 ```
 
 <img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/04ff08a5-9c6b-4925-9944-a1bd8f25d756" />
+
+Después de añadir ese código a nuestro archivo, lo iniciaremos ejecutando ```node app.js``` 
+
+<img width="1201" height="677" alt="image" src="https://github.com/user-attachments/assets/f70e6d83-b3b6-4abe-8898-41c1114e9230" />
