@@ -87,3 +87,16 @@ Como se puede ver, ambas páginas han tardado bastante en cargar. Esto ocurre po
 ---
 
 # USANDO LOS CLUSTERS: 2. ¡Ahora con más cluster!
+
+Ahora vamos a implementar los clústeres en nuestra aplicación. Para ello, vamos a editar nuestro archivo app.js y pondremos el código que aparece en la captura de pantalla:
+
+<img width="1201" height="675" alt="image" src="https://github.com/user-attachments/assets/3fdb6d4a-2193-4347-b2f3-85d567cf7427" />
+
+Hay que tener en cuenta que he decidido adaptar un poco el código para que este no me llegue a dar posibles problemas más adelante.
+
+A continuación, haremos una única solicitud al servidor con un valor de n grande, y rápidamente haremos otra solicitud con un número menor, no sin antes ejecutar ```node app.js``` para que se despliegue la aplicación con los cambios ya hechos.
+
+<img width="901" height="669" alt="image" src="https://github.com/user-attachments/assets/19059040-cce3-4ecc-8b58-e9eb8e160c16" />
+<img width="900" height="667" alt="image" src="https://github.com/user-attachments/assets/1b83b8c3-4a6a-4bfc-bddd-aded6af845b1" />
+
+Como podemos observar, aunque la solicitud grande siga tardando un poco más, la otra (la que tiene un valor n = 555), se ha hecho casi inmediatamente tras aplicar más workers para las solicitudes.
