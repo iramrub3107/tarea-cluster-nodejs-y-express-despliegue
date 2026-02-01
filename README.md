@@ -167,3 +167,23 @@ Y con este comando ya nos habrá creado el archivo, por lo que ahora tocará con
 Y ahora, ejecutaremos pm2 start ecosystem.config.js y ya se nos ejecutaría nuestra aplicación sin necesidad de indicarle a PM2 que inicie la aplicación en "cluster_mode" (con la opción -i) y sin indicarle que genere x cantidad de workers.
 
 <img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/342aebcf-7af0-4d99-9e0d-e90f428568a1" />
+
+---
+
+Ahora, vamos a ejecutar varios comandos y veremos qué es lo que nos sale por la terminal:
+1. pm2 ls: Al ejecutar este comando, nos sale básicamente la misma tabla que nos aparece cuando vamos a iniciar nuestra aplicación. O sea, que lo que nos sale es la lista de procesos gestionados por esta herramienta, su consumo, modo de ejecución, su estado…
+
+<img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/e0a13d4b-87df-45ce-93ef-3b77d02915dd" />
+
+
+2. pm2 logs: Al ejecutar este comando, nos sale en tiempo real los logs de todos los procesos gestionados por PM2.
+
+<img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/f3c5f911-03a5-405b-ab68-cdb37ce6a73e" />
+
+3. pm2 monit: Al ejecutar este comando, podemos monitorizar el uso de la CPU, memoria y estado de los procesos gestionados por PM2 mediante una interfaz.
+
+<img width="1204" height="677" alt="image" src="https://github.com/user-attachments/assets/35583acc-189c-4c33-8dc6-402d3f0cf960" />
+
+Finalmente, en el caso de que tengamos muchos procesos ejecutándose con PM2 y los queramos parar todos, podemos ejecutar pm2 stop all
+
+<img width="1204" height="204" alt="image" src="https://github.com/user-attachments/assets/9b67ef18-a527-4c08-b440-1f387a2f3576" />
