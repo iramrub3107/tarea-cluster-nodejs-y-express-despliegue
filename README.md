@@ -1,1 +1,31 @@
-# tarea-cluster-nodejs-y-express-despliegue
+# Despliegue de una aplicación en "Cluster" con NodeJS y Express | Práctica realizada por Izan Ramos Rubio
+
+Hay que tener en cuenta que, antes de empezar esta práctica, sí o sí tenemos que tener instalado NodeJS. Como usaremos una versión de Ubuntu fuera de soporte, para instalarnos NodeJS, tendremos que instalarnos una versión de esta herramienta llamada "NodeJS LTS" (NodeJS Long Term Service).
+
+Para instalarnos NodeJS LTS, tenemos que ejecutar dos comandos:
+
+1. ```curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -```
+
+<img width="1202" height="677" alt="image" src="https://github.com/user-attachments/assets/a108ab23-50ef-4240-a1c5-24cf37fa76e6" />
+
+2. ```sudo apt install -y nodejs```. Básicamente nos instalaremos NodeJS con normalidad después de ejecutar el anterior comando.
+
+<img width="1203" height="676" alt="image" src="https://github.com/user-attachments/assets/e71e6cdf-ad3f-44d1-a37e-d289c22f02f0" />
+
+Una vez tengamos instalado NodeJS, ya sí podremos empezar a hacer esta práctica.
+
+# USANDO LOS CLUSTERS: 1. Primero sin Cluster
+
+Como vamos a tener que acceder mediante SSH a muestra máquina, seguiremos estos pasos:
+
+1. En la configuración de la máquina, vamos a ir al apartado de Red y pondremos “Adaptador Puente” para que, al ejecutar “ip a”, nos salga una IP “normal” (y no una rara al tener la VM conectada a una red NAT).
+
+<img width="1201" height="697" alt="image" src="https://github.com/user-attachments/assets/96a0f565-b55d-458d-9a2d-02dc168cc8cb" />
+
+2. Guardamos los cambios, iniciamos la máquina y una vez dentro ejecutamos ip a. Nos guardamos también la IP que nos salga al ejecutar este comando porque nos va a ser útil para poder acceder a la máquina más adelante:
+
+<img width="1201" height="678" alt="image" src="https://github.com/user-attachments/assets/d74a4981-b4ec-4809-a2d3-ffca497724e6" />
+
+3. Desde la terminal de nuestro equipo anfitrión, accederemos a la máquina ejecutando (al menos en mi caso, al usar Arch Linux) ssh usuario@172.20.10.4 (la IP de mi VM)
+
+<img width="1202" height="677" alt="image" src="https://github.com/user-attachments/assets/675a0cbf-ee03-4f9b-91c9-8095bdc15d0f" />
